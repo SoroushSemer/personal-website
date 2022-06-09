@@ -1,0 +1,7 @@
+.projectspage-menu {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
