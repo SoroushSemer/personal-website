@@ -46,3 +46,21 @@
   transform: scale(1.1);
   transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+.socials {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0px 20px 0px 0px;
+}
+.created-in {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  padding: 0 1rem;
+  border-radius: 20px 0px 0px 0px;
+}
+.created-in-bar {
+  left: auto;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+.created-in-bar .container-fluid {
+  padding-right: 0;
+}

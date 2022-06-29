@@ -1,0 +1,197 @@
+.profile {
+  width: 100%;
+  min-height: 95vh;
+  height: fit-content;
+  display: grid;
+  /* grid-template-columns: 1fr; */
+  /* align-items: center; */
+  justify-items: center;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.5) 90%, black 100%),
+    url("https://wallpaperaccess.com/full/1736660.jpg");
+  background-size: cover;
+  background-position: top;
+  animation: fadebackground 2s;
+  box-shadow: 2vh 2vh 2vh 5vh rgba(0, 0, 0, 0.3) inset;
+}
+
+@keyframes fadebackground {
+  from {
+    box-shadow: 10vh 10vh 10vh 10vh rgba(0, 0, 0, 1) inset;
+    /* opacity: 0.1; */
+  }
+  to {
+    /* box-shadow: 2vh 2vh 2vh 2vh rgba(0, 0, 0, 0.3) inset; */
+    /* opacity: 0.9; */
+  }
+}
+
+/* .profile div {
+  grid-row-start: 1;
+  grid-column-start: 1;
+} */
+.profile-pic {
+  opacity: 1;
+  height: 10rem;
+  width: 10rem;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-left: -7.5vh;
+  margin-right: 1rem;
+  border: 5px solid rgb(0, 214, 255);
+}
+.profile-content:hover .profile-pic {
+  transform: scale(1.1);
+  transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.profile-content {
+  margin-top: -10%;
+  /* width: calc(100% - 15vh); */
+  height: 3rem;
+  /* overflow: hidden; */
+  border-radius: 1rem;
+  border: 3px solid rgb(0, 214, 255);
+  background-color: rgba(47, 79, 79, 0.7);
+  padding: 2rem 1rem;
+  /* padding-left: 7.5vh; */
+  /* margin-left: 28%; */
+  display: flex;
+  align-items: center;
+}
+
+.profile-content h1 {
+  color: rgb(0, 214, 255);
+  padding-right: 0.3rem;
+
+  overflow: hidden;
+  white-space: nowrap;
+  /* margin: 0 auto; */
+  font-size: 2.5rem;
+  font-weight: lighter;
+
+  animation: typing 1.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+    border-right: 0.15rem solid white;
+  }
+  to {
+    width: 15rem;
+    border-right: 0.15rem solid rgba(255, 255, 255, 0);
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-content {
+    height: fit-content;
+    width: 50%;
+
+    display: grid;
+    margin-top: 5vh;
+  }
+  .profile-pic {
+    margin: 0 auto;
+  }
+  .profile-content h1 {
+    white-space: unset;
+    text-align: center;
+    animation: none;
+    padding-top: 5vh;
+  }
+}
+
+.arrows {
+  width: 60px;
+  height: 72px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 2vh;
+}
+
+.arrows path {
+  stroke: #2994d1;
+  fill: transparent;
+  stroke-width: 2px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/ {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s; /* Safari 和 Chrome */
+}
+
+.outlined-button {
+  padding: 1rem;
+  margin-bottom: 5vh;
+}
+
+.profile-position {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(50, 50, 0, 0.7);
+  border-radius: 5px;
+  border: 2px solid #ffc800;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+.position-text {
+  font-size: 1.5rem;
+}
+.position-text:hover {
+  color: #ffc800;
+}

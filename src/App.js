@@ -1,35 +1,32 @@
-import { Component } from "react";
+import { Component, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Header from "./components/header/header.component";
+import Socials from "./components/socials/socials.components";
 import Footer from "./components/footer/footer.components";
 import HomePage from "./pages/homepage/homepage.component";
 import ProjectsPage from "./pages/projectspage/projectspage.component";
-import AboutMePage from "./pages/aboutmepage/aboutmepage.component";
+import ExperiencePage from "./pages/experiencepage/experiencepage.component";
+import DocumentsPage from "./pages/documentspage/documentspage.components";
 
-import "./App.css";
+import "./App.scss";
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: "Soroush Semerkant",
-    };
-  }
-  render() {
-    return (
-      <div className="App">
-        <Routes>
-          <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/about" element={<AboutMePage />} />
-          <Route exact path="/projects" element={<ProjectsPage />} />
-          <Route exact path="/documents" element={<ProjectsPage />} />
-        </Routes>
-        <Header />
-        <Footer />
-      </div>
-    );
-  }
-}
+import { getProjects } from "./utils/firebase/firebase.utils";
+
+export const App = () => {
+  return (
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/experience" element={<ExperiencePage />} />
+        <Route exact path="/projects" element={<ProjectsPage />} />
+        <Route exact path="/documents" element={<DocumentsPage />} />
+      </Routes>
+      <Socials />
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

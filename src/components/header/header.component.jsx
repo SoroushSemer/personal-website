@@ -8,71 +8,49 @@ import MyLogo from "../../assets/personal logo.png";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { auth } from "../../firebase/firebase.utils";
+
+import { Nav, Navbar, Container } from "react-bootstrap";
+import "../../custom.scss";
+
 const Header = (props) => {
   const [isNavExp, setNavExp] = useState(false);
   return (
-    <nav className="header">
-      <Link
-        to="/"
-        className="logo-container"
-        onClick={() => {
-          setNavExp(false);
-        }}
-      >
-        {/* <MyLogo className="logo" /> */}
-        <img src={MyLogo} alt="logo" className="logo" />
-        <div className="logo-title">SFS</div>
-      </Link>
+    <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="p-3">
+      <Container fluid>
+        <Link to="/" className="navbar-brand">
+          <img
+            src={MyLogo}
+            alt="logo"
+            className="logo"
+            width="50"
+            height="50"
+          />{" "}
+          Soroush Semerkant
+        </Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-      {/* <div className="links">
-        <Link className="option" to="/about">
-          ABOUT ME
-        </Link>
-        <Link className="option" to="/projects">
-          PROJECTS
-        </Link>
-        <Link className="option" to="/contact">
-          CONTACTS
-        </Link>
-      </div> */}
-      <button
-        className="hamburger"
-        onClick={() => {
-          setNavExp(!isNavExp);
-        }}
-      >
-        <FontAwesomeIcon icon={faBars} color="rgb(0,214,255)" />
-      </button>
-      <div
-        className={isNavExp ? "nav-menu expanded" : "nav-menu"}
-        onClick={() => {
-          setNavExp(false);
-        }}
-      >
-        <ul>
-          <li>
-            <Link className="option" to="/">
-              HOME
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav className="justify-content-end flex-grow-1 pe-3 w-100">
+            <Link to="/" className="nav-link mx-2">
+              Home
             </Link>
-          </li>
-          <li>
-            <Link className="option" to="/about">
-              ABOUT ME
+            <Link to="/experience" className="nav-link mx-2">
+              Experience
             </Link>
-          </li>
-          <li>
-            <Link className="option" to="/projects">
-              PROJECTS
+            <Link to="/projects" className="nav-link mx-2">
+              Projects
             </Link>
-          </li>
-          <li>
-            <Link className="option" to="/documents">
-              DOCUMENTS
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+            <Nav.Link
+              href="/Soroush Semerkant Resume.pdf"
+              download
+              className="mx-2"
+            >
+              Resume
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 

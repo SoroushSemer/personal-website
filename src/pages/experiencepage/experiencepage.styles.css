@@ -1,7 +1,9 @@
-.homepage {
+.experiencepage {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding: 11vh 0; */
+  padding: 5vh 5vw;
+  color: white;
+  min-height: 95vh;
 }

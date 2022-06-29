@@ -1,0 +1,31 @@
+{
+  "experience": [
+    {
+      "title": "Consolidated Edison Company of New York",
+      "position": "Engineering Co-op in Steam Operations",
+      "start-date": "2019/07/01",
+      "end-date": "Present",
+      "description": "Learning the processes involved in providing a utility to the public",
+      "achievements": [
+        "Leading the efforts to develop an app using Microsoft Power Apps for training operators.",
+        "Developing an automatic notification system using Microsoft Power Automate that notifies station operators when they have required training.",
+        "Worked in a team to centralize all station procedures into a new, “smart procedure” system.",
+        "Updated over 1000 procedures to a new consistent format which was imported into the “smart procedure” system.",
+        "Implemented an inspection database system used to store data for analysis to predict and prevent system failures.",
+        "Presented to upper management the projects I had worked on during the 8-week summer internship and was offered a long-term co-op position."
+      ]
+    },
+    {
+      "title": "Stony Brook University Research",
+      "position": "Research Assistant in Mobile App Security",
+      "start-date": "2021/09/01",
+      "end-date": "2021/12/31",
+      "description": "Learning about Android App Security",
+      "achievements": [
+        "Collaborated with a team of 4 research assistants and a Professor to find security vulnerabilities in State COVID Exposure Notification Apps on Android with findings to be published at a later date.",
+        "Analyzed approximately 20 apps using tools such as MobSF and Android Studio (Java) to identify vulnerabilities or permission inconsistencies with the privacy policy.",
+        "Found approximately 15 different vulnerabilities or privacy violations with one of which being a major violation used in multiple Exposure Notification Apps."
+      ]
+    }
+  ]
+}
