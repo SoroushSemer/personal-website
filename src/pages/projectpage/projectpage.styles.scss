@@ -1,0 +1,28 @@
+.projectpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 5vw;
+
+  min-height: 95vh;
+}
+
+.card {
+  width: 100%;
+  max-width: 2000px;
+  background-color: #444;
+}
+
+.carousel {
+  border: 2px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project-link {
+  font-size: 2rem;
+}
+.project-link:hover {
+  color: white;
+}

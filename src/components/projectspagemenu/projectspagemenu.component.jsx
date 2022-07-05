@@ -23,7 +23,7 @@ class ProjectsPageMenu extends React.Component {
   }
   getProjectMap = async () => {
     const projectMap = await getProjects(this.state.language, false);
-    console.log(projectMap);
+    // console.log(projectMap);
     this.setState({ projects: projectMap });
   };
   handleClick = (lang) => {
@@ -48,7 +48,7 @@ class ProjectsPageMenu extends React.Component {
         >
           {projectsJSON.languages.map((language) => {
             return (
-              <Col className="mb-3">
+              <Col className="mb-3" key={language}>
                 <Button
                   variant={
                     this.state.language == language
@@ -88,7 +88,14 @@ class ProjectsPageMenu extends React.Component {
               )
               .map((title) => {
                 return (
-                  <Col xs={12} md={6} lg={4} xxl={3} className="mb-4 ">
+                  <Col
+                    xs={12}
+                    md={6}
+                    lg={4}
+                    xxl={3}
+                    className="mb-4 "
+                    key={title}
+                  >
                     <MenuItem
                       key={title}
                       title={title}

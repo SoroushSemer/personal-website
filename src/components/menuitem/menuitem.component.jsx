@@ -57,10 +57,9 @@ const MenuItem = (props) => {
     //     <span className="subtitle">VIEW PROJECT</span>
     //   </div>
     // </Link>
-    <a
-      href={props.linkUrl}
+    <Link
+      to={`/projects/${props.id}`}
       className="d-flex flex-wrap justify-content-center"
-      target={"_blank"}
     >
       <Card
         style={{
@@ -92,15 +91,13 @@ const MenuItem = (props) => {
                 return lang + " ";
               })}
             </Card.Text>
-            <a href={props.linkUrl}>
-              <Button variant="primary" className="subtitle">
-                View Project
-              </Button>
-            </a>
+            <Button variant="primary" className="subtitle">
+              View Project
+            </Button>
           </Container>
         </Card.ImgOverlay>
       </Card>
-    </a>
+    </Link>
   );
 };
 export default MenuItem;

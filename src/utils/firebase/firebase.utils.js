@@ -42,3 +42,20 @@ export const getProjects = async () => {
   }, {});
   return projectsMap;
 };
+
+export const getProject = async (id) => {
+  const collectionRef = collection(db, "projects");
+  var q;
+
+  q = query(collectionRef, where("id", "==", id));
+  const querySnapshot = await getDocs(q);
+  const projectsMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+    const { title, ...otherProps } = docSnapshot.data();
+    acc[title] = otherProps;
+    return acc;
+  }, {});
+  return {
+    title: Object.keys(projectsMap)[0],
+    ...projectsMap[Object.keys(projectsMap)[0]],
+  };
+};

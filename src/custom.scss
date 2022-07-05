@@ -7,7 +7,7 @@ $theme-colors: (
   "secondary": #ffc800,
 );
 
-$theme-colors: map-remove($theme-colors, "info", "light", "dark");
+$theme-colors: map-remove($theme-colors, "info");
 
 // Bootstrap and its default variables
 @import "../node_modules/bootstrap/scss/bootstrap";

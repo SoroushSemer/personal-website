@@ -21,7 +21,7 @@ class FeaturedProjectMenu extends React.Component {
   }
   componentDidMount() {
     const getProjectMap = async () => {
-      const projectMap = await getProjects(this.state.language, false);
+      const projectMap = await getProjects();
       console.log(projectMap);
       this.setState({ projects: projectMap });
     };
