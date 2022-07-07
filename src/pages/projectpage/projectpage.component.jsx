@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 import { getProject } from "../../utils/firebase/firebase.utils";
 
-import { Card, Carousel, Row, Col } from "react-bootstrap";
+import { Card, Carousel, Row, Col, Spinner } from "react-bootstrap";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -13,85 +13,91 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectPage = (props) => {
   const params = useParams();
-  const [project, setProject] = useState({});
+  const [project, setProject] = useState(null);
+
   useEffect(() => {
+    // console.log(params.id);
     const getProjects = async () => {
-      const exp = await getProject(params.id);
+      const exp = await getProject(parseInt(params.id));
       setProject(exp);
     };
-    getProjects().then(() => {
-      console.log(project);
-    });
+    getProjects();
   }, []);
+
+  // console.log(project);
 
   return (
     <div className="projectpage text-white">
-      {/* <Card bg="" className="">
-        <Card.Header as="h1" className="text-primary text-center">
-          {project.title}
-        </Card.Header>
-        <Row xs={1} xl={2} className="px-5 py-3">
-          <Col>
-            <Carousel>
-              <Carousel.Item>
-                <img className="d-block w-100" src={project.imageUrl} />
-                <Carousel.Caption className="text-secondary">
-                  First Image
-                </Carousel.Caption>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100" src={project.imageUrl} />
-                <Carousel.Caption>Second Image</Carousel.Caption>
-              </Carousel.Item>
-            </Carousel>
-            <Card.Body>
-              <Card.Text>{}</Card.Text>
-            </Card.Body>
-          </Col>
-          <Col>
-            <Card.Text className="text-white">
+      {project != null ? (
+        <Card bg="" className="">
+          <Card.Header as="h1" className="text-primary text-center">
+            {project.title}
+          </Card.Header>
+          <Row xs={1} xl={2} className="px-5 py-3">
+            <Col>
+              <Carousel variant="dark">
+                {project.imageUrl.map((image, index) => {
+                  return (
+                    <Carousel.Item key={index}>
+                      <img className="d-block w-100" src={image} />
+                    </Carousel.Item>
+                  );
+                })}
+              </Carousel>
+              <Card.Body>
+                <Card.Text>{}</Card.Text>
+              </Card.Body>
+            </Col>
+            <Col>
               <h3 className="text-secondary">Description:</h3>
               <p>{project.description}</p>
               <h5 className="text-secondary">
                 The goal of this project was to gain an understanding of:
               </h5>
               <ul>
-                {project.goals.map((goal) => {
-                  return <li>{goal}</li>;
+                {project.goals.map((goal, index) => {
+                  return <li key={index}>{goal}</li>;
                 })}
               </ul>
-            </Card.Text>
-          </Col>
-        </Row>
-        <Card.Footer>
-          <Row>
-            <Col className="text-start d-flex align-items-center">
-              <code className="text-start">
-                Created:{" "}
-                {new Date(project.date["seconds"] * 1000).toLocaleString()}
-              </code>
-            </Col>
-            <Col className="text-end">
-              <a
-                href={project.githubLink}
-                className="project-link text-primary px-3"
-              >
-                <FontAwesomeIcon className="project-link" icon={faGithub} />
-              </a>
-              <a
-                href={project.linkUrl}
-                className="project-link text-primary px-3"
-              >
-                <FontAwesomeIcon
-                  className="project-link"
-                  icon={faArrowUpRightFromSquare}
-                />
-              </a>
+              <h5 className="text-secondary">Languages:</h5>
+              <ul>
+                {project.language.map((language, index) => {
+                  return <li key={index}>{language}</li>;
+                })}
+              </ul>
             </Col>
           </Row>
-        </Card.Footer>
-        //{" "}
-      </Card> */}
+          <Card.Footer>
+            <Row>
+              <Col className="text-start d-flex align-items-center">
+                <code className="text-start">
+                  Created:{" "}
+                  {new Date(project.date["seconds"] * 1000).toLocaleString()}
+                </code>
+              </Col>
+              <Col className="text-end">
+                <a
+                  href={project.githubLink}
+                  className="project-link text-primary px-3"
+                >
+                  <FontAwesomeIcon className="project-link" icon={faGithub} />
+                </a>
+                <a
+                  href={project.linkUrl}
+                  className="project-link text-primary px-3"
+                >
+                  <FontAwesomeIcon
+                    className="project-link"
+                    icon={faArrowUpRightFromSquare}
+                  />
+                </a>
+              </Col>
+            </Row>
+          </Card.Footer>
+        </Card>
+      ) : (
+        <Spinner animation="border" variant="primary" />
+      )}
     </div>
   );
 };

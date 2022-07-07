@@ -8,7 +8,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 // import { auth } from "../../firebase/firebase.utils";
 
 import { Nav, Navbar, Container } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 const Socials = (props) => {
   return (
     <div>
@@ -44,10 +44,15 @@ const Socials = (props) => {
           </Nav>
         </Container>
       </Navbar>
-      <Navbar bg="dark" fixed="bottom" expand="xs" className="created-in-bar">
+      <Navbar
+        bg="dark"
+        fixed="bottom"
+        expand="xs"
+        className="d-none d-md-flex created-in-bar"
+      >
         <Container fluid className="justify-content-end">
           <code className="created-in text-primary">
-            Created using FERN Stack
+            <Link to="/projects/1">Created using FERN Stack</Link>
           </code>
         </Container>
       </Navbar>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Button, Row, Col } from "react-bootstrap";
+import { Container, Button, Row, Col, Spinner } from "react-bootstrap";
 import "../../custom.scss";
 import "../../index.scss";
 import "../../custom.scss";
@@ -16,7 +16,7 @@ class FeaturedProjectMenu extends React.Component {
   constructor() {
     super();
     this.state = {
-      projects: {},
+      projects: null,
     };
   }
   componentDidMount() {
@@ -35,15 +35,19 @@ class FeaturedProjectMenu extends React.Component {
             <h1>Featured Projects</h1>
           </Row>
           <Row className="d-flex my-5 justify-content-evenly">
-            {Object.keys(this.state.projects)
-              .filter((a) => this.state.projects[a].featured)
-              .map((title) => {
-                return (
-                  <Col xs={12} md={6} lg={4} key={title}>
-                    <MenuItem title={title} {...this.state.projects[title]} />
-                  </Col>
-                );
-              })}
+            {this.state.projects != null ? (
+              Object.keys(this.state.projects)
+                .filter((a) => this.state.projects[a].featured)
+                .map((title) => {
+                  return (
+                    <Col xs={12} md={6} lg={4} key={title}>
+                      <MenuItem title={title} {...this.state.projects[title]} />
+                    </Col>
+                  );
+                })
+            ) : (
+              <Spinner animation="border" variant="primary" />
+            )}
           </Row>
           <Row>
             <Link to="/projects">

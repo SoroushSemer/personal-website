@@ -4,7 +4,7 @@ import "./projectspagemenu.styles.css";
 
 import MenuItem from "../menuitem/menuitem.component";
 
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col, Container, Button, Spinner } from "react-bootstrap";
 
 import { getProjects } from "../../utils/firebase/firebase.utils";
 
@@ -15,7 +15,7 @@ class ProjectsPageMenu extends React.Component {
     super();
     this.state = {
       language: "",
-      projects: {},
+      projects: null,
     };
     this.handleClick = this.handleClick.bind(this);
     this.getProjectMap = this.getProjectMap.bind(this);
@@ -78,32 +78,36 @@ class ProjectsPageMenu extends React.Component {
           className="w-100 justify-content-center"
         >
           {
-            Object.keys(this.state.projects)
-              .filter((project) =>
-                this.state.language
-                  ? this.state.projects[project].language.includes(
-                      this.state.language
-                    )
-                  : true
-              )
-              .map((title) => {
-                return (
-                  <Col
-                    xs={12}
-                    md={6}
-                    lg={4}
-                    xxl={3}
-                    className="mb-4 "
-                    key={title}
-                  >
-                    <MenuItem
+            this.state.projects != null ? (
+              Object.keys(this.state.projects)
+                .filter((project) =>
+                  this.state.language
+                    ? this.state.projects[project].language.includes(
+                        this.state.language
+                      )
+                    : true
+                )
+                .map((title) => {
+                  return (
+                    <Col
+                      xs={12}
+                      md={6}
+                      lg={4}
+                      xxl={3}
+                      className="mb-4 "
                       key={title}
-                      title={title}
-                      {...this.state.projects[title]}
-                    />
-                  </Col>
-                );
-              })
+                    >
+                      <MenuItem
+                        key={title}
+                        title={title}
+                        {...this.state.projects[title]}
+                      />
+                    </Col>
+                  );
+                })
+            ) : (
+              <Spinner animation="border" variant="primary" />
+            )
 
             // .sort((a, b) => (new Date(a.date) - new Date(b.date)) * -1)
           }

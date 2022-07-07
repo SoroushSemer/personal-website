@@ -57,6 +57,35 @@
   background-color: #555;
 }
 
+.option:hover {
+  transform: scale(1.1);
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.logo {
+  height: 100%;
+}
+.logo-title {
+  display: block;
+  font-size: 1rem;
+}
+.logo-container {
+  height: 50%;
+  width: 4rem;
+  padding: 0 0 0 1.5vw;
+  text-align: center;
+  top: 0;
+  color: rgb(0, 214, 255);
+}
+
+.logo-container:hover {
+  transform: scale(1.1);
+  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 @media screen and (max-width: 768px) {
   .hamburger {
     display: block;
@@ -94,29 +123,10 @@
   .logo-container .logo-title {
     display: none;
   }
-}
-
-.logo {
-  height: 100%;
-}
-.logo-title {
-  display: block;
-  font-size: 1rem;
-}
-.option:hover {
-  transform: scale(1.1);
-  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.logo-container {
-  height: 50%;
-  width: 4rem;
-  padding: 0 0 0 1.5vw;
-  text-align: center;
-  top: 0;
-  color: rgb(0, 214, 255);
-}
-
-.logo-container:hover {
-  transform: scale(1.1);
-  transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+  .option:hover {
+    transform: none;
+  }
+  .logo-container:hover {
+    transform: none;
+  }
 }

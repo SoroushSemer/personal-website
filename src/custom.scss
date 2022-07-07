@@ -44,9 +44,6 @@ $theme-colors: map-remove($theme-colors, "info");
   color: rgba(255, 255, 255, 1);
   font-size: larger;
 }
-.navbar-dark .navbar-nav .nav-link:hover {
-  transform: scale(1.2);
-}
 
 .navbar-dark .navbar-brand {
   color: rgb(0, 214, 255);
