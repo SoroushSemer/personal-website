@@ -8,7 +8,6 @@ import HomePage from "./pages/homepage/homepage.component";
 import ProjectsPage from "./pages/projectspage/projectspage.component";
 import ProjectPage from "./pages/projectpage/projectpage.component";
 import ExperiencePage from "./pages/experiencepage/experiencepage.component";
-import DocumentsPage from "./pages/documentspage/documentspage.components";
 
 import "./App.scss";
 
@@ -27,7 +26,6 @@ export const App = () => {
         <Route exact path="/experience" element={<ExperiencePage />} />
         <Route exact path="/projects/:id" element={<ProjectPage />} />
         <Route exact path="/projects" element={<ProjectsPage />} />
-        <Route exact path="/documents" element={<DocumentsPage />} />
         <Route exact path="/:page" element={<PageNotFound />} />
       </Routes>
       <Socials />

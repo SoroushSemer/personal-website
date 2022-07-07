@@ -4,10 +4,13 @@
   align-items: center;
   justify-content: center;
   /* padding: 11vh 0; */
-
   scroll-snap-type: y mandatory;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
 .child {
-  scroll-snap-align: start;
+  scroll-snap-align: start end;
 }

@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 const AboutMe = (props) => {
   return (
-    <section id="aboutme" className="aboutme">
+    <section id="aboutme" className="aboutme child">
       <h1 className="mt-5">Programming Since 13</h1>
       <p className="mt-5">
         I am a <span>Computer Science</span> and{" "}

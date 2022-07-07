@@ -8,9 +8,9 @@ import { Container, Stack, Button, Image } from "react-bootstrap";
 
 const Profile = (props) => {
   return (
-    <section className="profile">
-      <Container className="d-md-flex justify-content-start h-100">
-        <Stack className="align-items-center justify-content-center">
+    <section className="profile child">
+      <Container className="d-md-flex justify-content-start h-100 mt-5">
+        <Stack className="align-items-center justify-content-center mt-5">
           <a className="profile-content w-auto mb-4" href="#aboutme">
             <div
               className="profile-pic"
