@@ -14,6 +14,10 @@ import "./App.scss";
 
 import { getProjects } from "./utils/firebase/firebase.utils";
 
+const PageNotFound = () => {
+  return <div className="pagenotfound">Page Not Found</div>;
+};
+
 export const App = () => {
   return (
     <div className="App">
@@ -24,6 +28,7 @@ export const App = () => {
         <Route exact path="/projects/:id" element={<ProjectPage />} />
         <Route exact path="/projects" element={<ProjectsPage />} />
         <Route exact path="/documents" element={<DocumentsPage />} />
+        <Route exact path="/:page" element={<PageNotFound />} />
       </Routes>
       <Socials />
       <Footer />

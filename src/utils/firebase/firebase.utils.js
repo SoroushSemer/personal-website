@@ -44,18 +44,42 @@ export const getProjects = async () => {
 };
 
 export const getProject = async (id) => {
-  const collectionRef = collection(db, "projects");
-  var q;
+  // const collectionRef = collection(db, "projects");
+  // var q;
 
-  q = query(collectionRef, where("id", "==", id));
-  const querySnapshot = await getDocs(q);
-  const projectsMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
-    const { title, ...otherProps } = docSnapshot.data();
-    acc[title] = otherProps;
-    return acc;
-  }, {});
-  return {
-    title: Object.keys(projectsMap)[0],
-    ...projectsMap[Object.keys(projectsMap)[0]],
-  };
+  // q = query(collectionRef, where("id", "==", id));
+  // const querySnapshot = await getDocs(q);
+  // const projectsMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+  //   const { title, ...otherProps } = docSnapshot.data();
+  //   acc[title] = otherProps;
+  //   return acc;
+  // }, {});
+  // return {
+  //   title: Object.keys(projectsMap)[0],
+  //   ...projectsMap[Object.keys(projectsMap)[0]],
+  // };
+
+  const response = collection(db, "projects");
+  const q = query(response, where("id", "==", id));
+
+  const data = await getDocs(q);
+  var exp;
+  data.docs.forEach((item) => {
+    exp = item.data();
+  });
+  // console.log(exp);
+  return exp;
+};
+
+export const getExperience = async () => {
+  const response = collection(db, "experience");
+  const q = query(response, orderBy("date", "desc"));
+
+  const data = await getDocs(q);
+  var exp = [];
+  data.docs.forEach((item) => {
+    exp = [...exp, item.data()];
+  });
+  // console.log(exp);
+  return exp;
 };

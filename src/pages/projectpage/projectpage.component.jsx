@@ -13,20 +13,20 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const ProjectPage = (props) => {
   const params = useParams();
-  const [project, setProject] = useState([]);
-  //   console.log(params);
+  const [project, setProject] = useState({});
   useEffect(() => {
-    const getProjectMap = async () => {
-      const projectMap = await getProject(parseInt(params.id));
-      console.log(projectMap);
-      setProject(projectMap);
+    const getProjects = async () => {
+      const exp = await getProject(params.id);
+      setProject(exp);
     };
-    getProjectMap();
+    getProjects().then(() => {
+      console.log(project);
+    });
   }, []);
 
   return (
-    <div className="projectpage">
-      <Card bg="" className="">
+    <div className="projectpage text-white">
+      {/* <Card bg="" className="">
         <Card.Header as="h1" className="text-primary text-center">
           {project.title}
         </Card.Header>
@@ -55,11 +55,11 @@ const ProjectPage = (props) => {
               <h5 className="text-secondary">
                 The goal of this project was to gain an understanding of:
               </h5>
-              {/* <ul>
+              <ul>
                 {project.goals.map((goal) => {
                   return <li>{goal}</li>;
                 })}
-              </ul> */}
+              </ul>
             </Card.Text>
           </Col>
         </Row>
@@ -68,7 +68,7 @@ const ProjectPage = (props) => {
             <Col className="text-start d-flex align-items-center">
               <code className="text-start">
                 Created:{" "}
-                {/* {new Date(project.date["seconds"] * 1000).toLocaleString()} */}
+                {new Date(project.date["seconds"] * 1000).toLocaleString()}
               </code>
             </Col>
             <Col className="text-end">
@@ -90,7 +90,8 @@ const ProjectPage = (props) => {
             </Col>
           </Row>
         </Card.Footer>
-      </Card>
+        //{" "}
+      </Card> */}
     </div>
   );
 };

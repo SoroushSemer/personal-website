@@ -22,7 +22,7 @@ class ProjectsPageMenu extends React.Component {
     this.getProjectMap();
   }
   getProjectMap = async () => {
-    const projectMap = await getProjects(this.state.language, false);
+    const projectMap = await getProjects();
     // console.log(projectMap);
     this.setState({ projects: projectMap });
   };
