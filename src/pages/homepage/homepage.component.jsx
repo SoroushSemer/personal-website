@@ -22,10 +22,9 @@ class HomePage extends React.Component {
           imageUrl={this.state.imageUrl}
           text={this.state.text}
           position={this.state.position}
-          className="child"
         />
-        <AboutMe className="child" />
-        <FeaturedProjectMenu className="child" />
+        <AboutMe />
+        <FeaturedProjectMenu />
       </div>
     );
   }
