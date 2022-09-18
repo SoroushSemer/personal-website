@@ -11,14 +11,12 @@ const ProjectsPage = (props) => {
         My Projects
       </h1>
       <p
-        style={{ color: "white", maxWidth: "1500px" }}
-        className="text-center mt-5"
+        style={{ color: "#ffc800", maxWidth: "1000px" }}
+        className="text-center mt-5 "
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-        exercitationem commodi consectetur repellendus hic ex aliquid repellat
-        voluptates iusto corporis labore minima quo, numquam cupiditate
-        blanditiis minus amet, culpa eos. Placeat enim quasi, fugiat fugit ipsum
-        perferendis voluptate recusandae ducimus magni repudiandae.
+        I always aim to complete at least one project during my breaks from
+        school. This is a database of all projects I have completed in and out
+        of school in subjects ranging from robotics to web development.
       </p>
       <ProjectsPageMenu />
     </div>

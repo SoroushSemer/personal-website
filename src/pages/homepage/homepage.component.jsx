@@ -9,20 +9,14 @@ class HomePage extends React.Component {
   constructor() {
     super();
     this.state = {
-      imageUrl:
-        "https://media-exp1.licdn.com/dms/image/C4D03AQFlvCd1z9Zahw/profile-displayphoto-shrink_400_400/0/1623016518415?e=1660176000&v=beta&t=Cc6vdHSZwkpfRgsb80SWQRhmHE1lmFZRGH32Yi1Qbts",
       text: "Hi, I'm Soroush",
-      position: "Diligent Self-Taught Programmer.",
+      position: "Diligent Enthusiastic Programmer.",
     };
   }
   render() {
     return (
       <div className="homepage">
-        <Profile
-          imageUrl={this.state.imageUrl}
-          text={this.state.text}
-          position={this.state.position}
-        />
+        <Profile text={this.state.text} position={this.state.position} />
         <AboutMe />
         <FeaturedProjectMenu />
       </div>

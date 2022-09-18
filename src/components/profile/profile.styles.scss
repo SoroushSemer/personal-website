@@ -8,7 +8,7 @@
   justify-items: center;
 
   background: linear-gradient(rgba(0, 0, 0, 0.5) 90%, black 100%),
-    url("https://wallpaperaccess.com/full/1736660.jpg");
+    url("../../../public/profile_bg.jpg");
   background-size: cover;
   background-position: top;
   animation: fadebackground 2s;
@@ -40,6 +40,7 @@
   margin-left: -7.5vh;
   margin-right: 1rem;
   border: 5px solid rgb(0, 214, 255);
+  background-color: #2994d1;
 }
 .profile-content:hover .profile-pic {
   transform: scale(1.1);

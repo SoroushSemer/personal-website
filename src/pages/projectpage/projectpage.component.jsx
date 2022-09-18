@@ -35,15 +35,20 @@ const ProjectPage = (props) => {
           </Card.Header>
           <Row xs={1} xl={2} className="px-5 py-3">
             <Col>
-              <Carousel variant="dark">
-                {project.imageUrl.map((image, index) => {
-                  return (
-                    <Carousel.Item key={index}>
-                      <img className="d-block w-100" src={image} />
-                    </Carousel.Item>
-                  );
-                })}
-              </Carousel>
+              {project.imageUrl.length > 1 ? (
+                <Carousel variant="dark">
+                  {project.imageUrl.map((image, index) => {
+                    return (
+                      <Carousel.Item key={index}>
+                        <img className="d-block w-100" src={image} />
+                      </Carousel.Item>
+                    );
+                  })}
+                </Carousel>
+              ) : (
+                <img src={project.imageUrl[0]} className="carousel one-img" />
+              )}
+
               <Card.Body>
                 <Card.Text>{}</Card.Text>
               </Card.Body>
@@ -59,7 +64,7 @@ const ProjectPage = (props) => {
                   return <li key={index}>{goal}</li>;
                 })}
               </ul>
-              <h5 className="text-secondary">Languages:</h5>
+              <h5 className="text-secondary">Technologies Used:</h5>
               <ul>
                 {project.language.map((language, index) => {
                   return <li key={index}>{language}</li>;

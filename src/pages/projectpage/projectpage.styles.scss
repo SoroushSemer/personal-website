@@ -9,7 +9,7 @@
 }
 
 .card {
-  width: 100%;
+  // width: 100%;
   max-width: 2000px;
   background-color: #444;
 }
@@ -18,6 +18,9 @@
   border: 2px solid white;
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 1000px;
 }
 
 .project-link {
@@ -25,4 +28,14 @@
 }
 .project-link:hover {
   color: white;
+}
+
+.card-img {
+  background-color: gray;
+}
+.carousel-item img {
+  background-color: gray;
+}
+.one-img {
+  background-color: gray;
 }

@@ -5,10 +5,10 @@ import "../../custom.scss";
 import { useState } from "react";
 
 import { Container, Row, Col, Spinner } from "react-bootstrap";
-import MenuItem from "../../components/menuitem/menuitem.component";
+// import MenuItem from "../../components/menuitem/menuitem.component";
 import { getExperience } from "../../utils/firebase/firebase.utils";
 
-const experienceJSON = require("../../assets/experience.json");
+// const experienceJSON = require("../../assets/experience.json");
 
 const ExperiencePage = (props) => {
   const [experience, setExperience] = useState(null);

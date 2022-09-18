@@ -12,12 +12,11 @@ const Profile = (props) => {
       <Container className="d-md-flex justify-content-start h-100 mt-5">
         <Stack className="align-items-center justify-content-center mt-5">
           <a className="profile-content w-auto mb-4" href="#aboutme">
-            <div
+            <img
               className="profile-pic"
-              style={{
-                backgroundImage: `url(${props.imageUrl})`,
-              }}
-            ></div>
+              src="profile_pic.jfif"
+              onError={(event) => (event.target.style.display = "none")}
+            />
             <h1 className="profile-text justify-content-center">
               {props.text}
             </h1>

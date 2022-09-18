@@ -41,8 +41,7 @@ const Header = (props) => {
               Projects
             </Link>
             <Nav.Link
-              href="/Soroush Semerkant Resume.pdf"
-              download
+              href="https://docs.google.com/document/d/1NwQwiyScCHL9o_gkLbZp7tKfH6xWVBP234oomylkSWc/export?format=pdf"
               className="mx-2"
             >
               Resume
